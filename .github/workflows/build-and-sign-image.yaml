@@ -40,12 +40,14 @@ jobs:
           GHCR_ARTIFACT_DIGEST: ${{ steps.build-eif.outputs.ghcr-artifact-digest }}
           GHCR_ARTIFACT_PATH: ${{ steps.build-eif.outputs.ghcr-artifact-path }}
           REKOR_LOG_INDEX: ${{ steps.build-eif.outputs.rekor-log-index }}
+          GITHUB_ATTEST_BUNDLE_PATH: ${{ steps.build-eif.outputs.github-attest-bundle-path }}
         run: |
           echo "${EIF_FILE_PATH}"
           echo "${EIF_INFO_PATH}"
           echo "${GHCR_ARTIFACT_DIGEST}"
           echo "${GHCR_ARTIFACT_PATH}"
           echo "${REKOR_LOG_INDEX}"
+          cat "${GITHUB_ATTEST_BUNDLE_PATH}"
 
       - name: Generate release note
         id: generate-release-note
