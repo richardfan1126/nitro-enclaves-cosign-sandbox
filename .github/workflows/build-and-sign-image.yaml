@@ -31,6 +31,7 @@ jobs:
           eif-file-name: enclave.eif
           eif-info-file-name: enclave-info.json
           artifact-tag: ${{ github.sha }}
+          save-pcrs-in-annotation: true
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Print outputs
